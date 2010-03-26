@@ -1,2 +1,2 @@
 date_format = "%d/%m/%Y"
-rootPath = '/dev/greta/administration/pdf/img/'
+rootPath = 'dzfzef/dev/greta/administration/pdf/img/'
