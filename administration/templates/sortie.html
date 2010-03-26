@@ -1,0 +1,10 @@
+{% if all_lc %}
+    {% for lc in all_lc %}
+    <ul>
+        <li>{{ lc.date_debut }}</li>
+        <li>{{ lc.date_fin }}</li>
+    </ul>
+    {% endfor %}
+{% else %}
+    <p>Pas de lettre de commande</p>
+{% endif %}
