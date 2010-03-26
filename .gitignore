@@ -2,4 +2,4 @@
 *~
 media/*
 setttings.py
-/dev/greta/administration/pdf/common.py
+administration/pdf/common.py
