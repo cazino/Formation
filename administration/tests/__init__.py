@@ -9,7 +9,7 @@ from periodTest import periodTest
 from querysetValidatortest import onePopulated_QuerySetTest, oneNotEnAttente_QuerySetTest, oneAbandonnee_QuerySetTest, oneEntreEnPresta_QuerySetTest, oneCloture_QuerySetTest
 from rdvViewTest import emptyRdvTest, nonEmptyRdvTest
 from bilanViewTest import persoAllEvents1Test, persoAllEvents2Test, persoAllEvents3Test
-from stattest import StatResultTest, LCStatCalcTest, SiteCalcStatTest, SiteCalcFreinTest, FreinResultTest, LCFreinResultTest, LCFreinCalcTest
+#from stattest import StatResultTest, LCStatCalcTest, SiteCalcStatTest, SiteCalcFreinTest, FreinResultTest, LCFreinResultTest, LCFreinCalcTest
 from feriestest import FeriesPaquesTest, IntervalleTest
 
 

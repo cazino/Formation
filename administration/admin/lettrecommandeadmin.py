@@ -20,7 +20,7 @@ from greta.administration.csv import csvResponse
 from greta.administration import params
 import myfields
 from datetime import timedelta 
-
+import pdb
 
 class LettreCommandeForm(forms.ModelForm):
     class Meta:
@@ -166,7 +166,7 @@ class lettreCommandeAdmin(admin.ModelAdmin):
         return csvResponse.writeResponse(request, queryset, response)
     facture_csv.short_description = u"Prévisions de facturation"
     
-    def bilan(self, request, queryset):     
+    def bilan(self, request, queryset):
         (bool, msg) = querySetValidator(queryset).oneEntreEnPresta()
         if bool:
             lc = queryset.get()
