@@ -1,0 +1,373 @@
+[
+    {
+        "pk": 6, 
+        "model": "administration.marche", 
+        "fields": {
+            "polemploi_id": "N0038", 
+            "montant_unitaire": 1110.1900000000001, 
+            "portage": 10.0
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "administration.prestataire", 
+        "fields": {
+            "cfc_mail": "serge.garnier@forpro-creteil.org", 
+            "nom": " GRETA IGE BTP 77", 
+            "cfc_telmobile": "0689956434", 
+            "coor_mail": "c.mauras@libertysurf.fr", 
+            "caf_telfixe": "0160094019", 
+            "cfc_fax": "", 
+            "coor_telmobile": "0607264193", 
+            "caf_nom": "THOMAS", 
+            "cfc_prenom": "SERGE", 
+            "caf_fax": "", 
+            "caf_mail": "yolande.thomas@forpro-creteil.org", 
+            "caf_telmobile": "", 
+            "cfc_telfixe": "0160171980", 
+            "coor_prenom": "Claude", 
+            "coor_fax": "", 
+            "coor_nom": "MAURAS", 
+            "caf_prenom": "YOLANDE", 
+            "coor_telfixe": "0160171980", 
+            "cfc_nom": "GARNIER"
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "administration.site", 
+        "fields": {
+            "nom": "GRETA IGE BTP 77 FONTAINEBLEAU", 
+            "ville": "", 
+            "prestataire": 12, 
+            "adresse": "", 
+            "telephone": "", 
+            "codepostal": ""
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "administration.site", 
+        "fields": {
+            "nom": "GRETA IGE BTP 77 MELUN", 
+            "ville": "", 
+            "prestataire": 12, 
+            "adresse": "", 
+            "telephone": "", 
+            "codepostal": ""
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "administration.site", 
+        "fields": {
+            "nom": "GRETA IGE BTP 77 MONTEREAU", 
+            "ville": "", 
+            "prestataire": 12, 
+            "adresse": "", 
+            "telephone": "", 
+            "codepostal": ""
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "administration.site", 
+        "fields": {
+            "nom": "GRETA IGE BTP 77 NEMOURS", 
+            "ville": "", 
+            "prestataire": 12, 
+            "adresse": "", 
+            "telephone": "", 
+            "codepostal": ""
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "administration.site", 
+        "fields": {
+            "nom": "GRETA IGE BTP 77 PROVINS", 
+            "ville": "", 
+            "prestataire": 12, 
+            "adresse": "", 
+            "telephone": "", 
+            "codepostal": ""
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "administration.site", 
+        "fields": {
+            "nom": "GRETA IGE BTP 77 ROISSY EN BRIE", 
+            "ville": "", 
+            "prestataire": 12, 
+            "adresse": "", 
+            "telephone": "", 
+            "codepostal": ""
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "administration.site", 
+        "fields": {
+            "nom": "GRETA IGE BTP 77 TORCY", 
+            "ville": "", 
+            "prestataire": 12, 
+            "adresse": "", 
+            "telephone": "", 
+            "codepostal": ""
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "administration.site", 
+        "fields": {
+            "nom": "GRETA IGE BTP 77 MELUN", 
+            "ville": "", 
+            "prestataire": 12, 
+            "adresse": "", 
+            "telephone": "", 
+            "codepostal": ""
+        }
+    }, 
+    {
+        "pk": 82, 
+        "model": "administration.chargeinsertion", 
+        "fields": {
+            "nom": "BEAUVAIS", 
+            "tel_fax": "", 
+            "prenom": "Yves", 
+            "les_sites": [
+                44, 
+                39, 
+                41, 
+                43, 
+                36, 
+                40, 
+                35
+            ], 
+            "tel_mobile": "", 
+            "mail": "", 
+            "tel_fixe": ""
+        }
+    }, 
+    {
+        "pk": 3030, 
+        "model": "administration.lettrecommande", 
+        "fields": {
+            "marche": 6, 
+            "numero_lc": "NM106", 
+            "typePresta_autre": "", 
+            "prenom": "MAMA", 
+            "nom": "ABDANI", 
+            "type_presta": "MOB", 
+            "site": 39, 
+            "avancement": "Cloturé", 
+            "ale_prescriptrice": "SAVIGNY LE TEMPLE", 
+            "date_fin": "2010-06-13", 
+            "mv": "MVEP", 
+            "charge_insertion": 82, 
+            "civilite": 2, 
+            "abandon": 1, 
+            "polemploi_id": "7193303H", 
+            "conseiller_ploleemploi": "BELABAN BOUCHER", 
+            "date_debut": "2009-12-16"
+        }
+    }, 
+    {
+        "pk": 2884, 
+        "model": "administration.ouverturerdv", 
+        "fields": {
+            "motif": "", 
+            "dateheure": "2009-12-16 16:00:00", 
+            "dateheure_nouveauRdv": null, 
+            "lettre_commande": 3030, 
+            "statut": "Présent contractualisé"
+        }
+    }, 
+    {
+        "pk": 3672, 
+        "model": "administration.rdv", 
+        "fields": {
+            "accemp_entr3": "", 
+            "accemp_entr2": "", 
+            "accemp_entr1": "", 
+            "accemp_entr4": "", 
+            "accemp_results3": "", 
+            "accemp_mod4": "", 
+            "accemp_mod1": "", 
+            "accemp_results1": "", 
+            "accemp_mod3": "", 
+            "accemp_mod2": "", 
+            "accemp_date2": "", 
+            "accemp_date3": "", 
+            "accemp_date1": "", 
+            "accemp_date4": "", 
+            "accsoc_date4": "", 
+            "accemp_results4": "", 
+            "accsoc_date1": "16/12/2009", 
+            "accemp_results2": "", 
+            "accsoc_date3": "", 
+            "accsoc_date2": "", 
+            "accsoc_results2": "", 
+            "accsoc_results3": "", 
+            "accsoc_results1": "La bénéficiaire  est sans qualification . Elle a un faible niveau d'études et ne maîtrise pas le français.\r\nElle est indemnisée à l'ARE.\r\nElle ne peut se déplacer hors de la localité où elle vit car elle n'est pas autonome avec les transports en commun qu'elle ne peut prendre seule.", 
+            "accsoc_results4": "", 
+            "dateheure": "2009-12-16 14:00:00", 
+            "typerdv": "Entretien individuel", 
+            "accsoc_insti4": "", 
+            "accsoc_insti1": "Dans nos locaux", 
+            "accsoc_insti3": "", 
+            "accsoc_insti2": "", 
+            "present": 1, 
+            "parcours": "", 
+            "accsoc_action1": "Entretien initial:\r\ndiagnostic insertion.", 
+            "accsoc_action3": "", 
+            "accsoc_action2": "", 
+            "accsoc_action4": "", 
+            "lettre_commande": 3030
+        }
+    }, 
+    {
+        "pk": 520, 
+        "model": "administration.etatcivil", 
+        "fields": {
+            "ville": "Moissy Cramayel", 
+            "code_postal": "77550", 
+            "lieu_naissance": "Maroc", 
+            "age": 47, 
+            "adresse": "23 place du 14 juillet 1789", 
+            "telmobile": "", 
+            "mail": "", 
+            "telfixe": "01 60 18 94 71", 
+            "date_naissance": "1962-12-31", 
+            "lettre_commande": 3030
+        }
+    }, 
+    {
+        "pk": 179, 
+        "model": "administration.bilan", 
+        "fields": {
+            "actionPrio_A3_action": "", 
+            "conc_datenext": null, 
+            "actionPrio_A2_action": "", 
+            "action_rela": "Trés renfermée sur elle-même. Ne peut communiquer à cause de son faible niveau de français.Passive. Peu dynamique.", 
+            "form_coor": "", 
+            "action_P2_coord": "", 
+            "emploi_AUDetails": "", 
+            "action_P2_fin": null, 
+            "form_heure": null, 
+            "entr_docs": "", 
+            "conc_date": "2010-01-13", 
+            "conc_obsbene": "Néant", 
+            "entr_justifcatif": null, 
+            "action_autreEmp": "", 
+            "form_intitule": "", 
+            "actionPrio_A1_demarche": "Dans un centre de formation.", 
+            "cess_date": "2010-01-13", 
+            "actionPrio_A3_date": "", 
+            "emploi_posteOcc": "", 
+            "action_reprCont": "", 
+            "rech_sect": "Nettoyage", 
+            "entr_lieu": "", 
+            "actionPrio_A1_date": "01/02/2010", 
+            "action_P1_coord": "", 
+            "emploi_coord": "", 
+            "action_reprRep": "", 
+            "form_fin": null, 
+            "actionPrio_A1_action": "Suivre des cours de FLE.", 
+            "action_sect": "", 
+            "aleCor_mail": "", 
+            "action_reprDiff": "", 
+            "aleCor_tel": "3949", 
+            "action_P2_deb": null, 
+            "action_P2_comp": "", 
+            "action_reprEntr": null, 
+            "action_P1_res": "", 
+            "rech_rome": "K2204", 
+            "aleCor_nom": "Belalan Boucher", 
+            "action_P2_res": "", 
+            "action_autreAct": "", 
+            "inscritAle": "2009-08-12", 
+            "actionPrio_A3_demarche": "", 
+            "emploi_CADetails": "", 
+            "action_P1_deb": null, 
+            "action_nbOE": null, 
+            "action_nbEN": null, 
+            "action_P1_comp": "", 
+            "emploi_debut": null, 
+            "form_debut": null, 
+            "entr_date": null, 
+            "conc_datesuivi": "", 
+            "action_autreSect": "", 
+            "actionPrio_A2_demarche": "", 
+            "action_comp": "Nettoyage des sole, faire les poussiéres, laver, utiliser les produits de nettoyage. Respect des consignes.", 
+            "form_objectif": "", 
+            "entr_dossier": "", 
+            "conc_obsref": "La bénéficiaire ne parle pas le français\r\net n'est pas mobile , elle n'est pas\r\nautonome par rapport aux transports en\r\ncommun et ne peux venir à Melun suivre\r\ndes cours de Français Langue Etrangère\r\ndans une structure professionnelle.Elle\r\nne peut chercher un emploi que dans son\r\nquartier à côté de chez elle.", 
+            "cess_moti": "Madame s'exprime dans un français très difficile à  comprendre; bien que les compétences transférables ont été mis à jour ainsi que les compétences cognitives, il est apparu impossible de définir des pistes cohérentes avec son projet professionnel.\r\nIl est indispensable que Madame puisse suivre une formation longue d'apprentissage de la langue française dès que de telles actions seront mises en place en 2010\r\nLa prestation est arrêtée puisque Madame ne peut se déplacer pour venir aux rendez vous fixés.\r\nDès que la maîtrise de la langue orale sera acquise au moins à minima, ce type de prestation pourras lui être à nouveau proposée  ", 
+            "action_P1_fin": null, 
+            "entr_nature": "", 
+            "emploi_duree": "", 
+            "emploi_typeContrat": null, 
+            "action_reprMod": "", 
+            "action_nbCa": null, 
+            "rech_zone": "Sud Seine et Marne", 
+            "emploi_codeRome": "", 
+            "action_cogn": "La bénéficiaire n'a jamais suivi de formation.Elle ne maitrise pas le français oral et écrit.Elle est peu motivée par la formation.", 
+            "conc_cons": "BELALAN BOUCHER  SAVIGNY LE TEMPLE", 
+            "emploi_fin": null, 
+            "actionPrio_A2_date": "", 
+            "rech_intit": "Agent de propreté", 
+            "lettre_commande": 3030
+        }
+    }, 
+    {
+        "pk": 337, 
+        "model": "administration.cloture", 
+        "fields": {
+            "terme": 0, 
+            "motif": "Madame ne peut se déplacer pour venir aux rendez vous fixés", 
+            "date_abandon": "2010-01-13", 
+            "lettre_commande": 3030
+        }
+    }, 
+    {
+        "pk": 494, 
+        "model": "administration.situationsociopro", 
+        "fields": {
+            "mob_aidePermis": null, 
+            "mob_vehicule": null, 
+            "sf_statut": "Marié", 
+            "form_type1": null, 
+            "mob_rayonAction": 10, 
+            "form_type2": null, 
+            "form_formation1": "", 
+            "mob_inscritPermis": null, 
+            "form_formation2": "", 
+            "al_date": "2009-03-01", 
+            "mob_autreTransport": "TRANSPORT EN COMMUN", 
+            "sf_nbenfants": 4, 
+            "exp_expericence3": "", 
+            "exp_expericence2": "AGENT DE SERVICE", 
+            "exp_expericence1": "FEMME DE MENAGE", 
+            "pp_projet1": "FEMME DE MENAGE", 
+            "al_type": "ARE", 
+            "pp_projet2": "", 
+            "sf_modegarde": "", 
+            "mob_permis": null, 
+            "autrComp_ling": "", 
+            "mob_limiteVehicule": null, 
+            "autrComp_autr": "", 
+            "exp_type1": "CDD", 
+            "autrComp_info": "", 
+            "exp_type3": null, 
+            "exp_type2": "CDD", 
+            "exp_duree3": "", 
+            "exp_duree2": "2 MOIS", 
+            "exp_duree1": "3 Ans", 
+            "qualif_niveau": "Sans", 
+            "pp_sansprojet": "", 
+            "lettre_commande": 3030
+        }
+    }
+]
