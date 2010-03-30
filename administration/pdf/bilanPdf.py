@@ -7,6 +7,7 @@ from reportlab.lib.colors import black, darkred
 from reportlab.lib.enums import TA_CENTER, TA_RIGHT
 from gretaview import GretaView  
 import common
+from utils import change_lines
 
 
 class rdvView(GretaView):
@@ -394,7 +395,7 @@ class MyStyleSheet(object):
 class MyParagraph(Paragraph):
     
     def __init__(self, text, style, bulletText=None, **kw):
-        Paragraph.__init__(self, text, bulletText=bulletText, style=MyStyleSheet.get(style, **kw))
+        Paragraph.__init__(self, text.replace('&', 'et'), bulletText=bulletText, style=MyStyleSheet.get(style, **kw))
         
         
     
@@ -406,7 +407,7 @@ class bilanDoc(object):
         self.story = []
         
     def append(self, text, style, bulletText=None, **kw):
-        for line in text.replace("\r", "").split("\n"):
+        for line in change_lines(text).split("\n"):
             #if line != "\n" and line != "\r":
             self.story.append(MyParagraph(text=line, style=style, bulletText=bulletText, **kw))
         
@@ -437,7 +438,7 @@ class bilanDoc(object):
         tableau_data = [[MyParagraph(style='style3', text=u"<b>Bénéficiaire</b>"), MyParagraph(style='style3', text=u"<b>Référent</b>"), MyParagraph(style='style3', text=u"<b>Correspondant ALE</b>")],    
                         [MyParagraph(style='style3', text=u"<b>Nom Prénom : <font color=black>"+self.bilanView.nomprenom()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Nom Prénom : <font color=black>"+self.bilanView.CInomprenom()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Nom Prénom : <font color=black>"+self.bilanView.ALEnomprenom()+"</font></b>")],
                         [MyParagraph(style='style3', text=u"<b>Identifiant n° : <font color=black>"+self.bilanView.idALE()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Organisme : <font color=black>"+self.bilanView.organismeReferent()+"</font></b>"), MyParagraph(style='style3', text=u"<b>ALE : <font color=black>"+self.bilanView.ALEnom()+"</font></b>")],
-                        [MyParagraph(style='style3', text=u"<b>Inscrit à ALE de : <font color=black>"+self.bilanView.incritALE()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.refTel()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.ALEtel()+"</font></b>")],
+                        [MyParagraph(style='style3', text=u"<b>Inscrit à ALE depuis : <font color=black>"+self.bilanView.incritALE()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.refTel()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.ALEtel()+"</font></b>")],
                         [MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.LCtel()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Mel : <font color=black>"+self.bilanView.refMail()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Mel : <font color=black>"+self.bilanView.ALEmail()+"</font></b>")],
                         [MyParagraph(style='style3', text=u"<b>Mel : <font color=black>"+self.bilanView.LCmail()+"</font></b>"), None, None],                        
                         ]
@@ -534,17 +535,35 @@ class bilanDoc(object):
         return styleGetter.getTableau(data=table_data, spaceAfter = 15)
     
     def action_accEmpl(self):
-        self.story.append(MyParagraph(u"<b>Accompagnement vers l'emploi / pistes d'emploi</b>", 'bullet-style3', spaceAfter=5, bulletText='-'))
-        self.story.append(MyParagraph(style='style_base', text=u"Nombre d’OE correspondant à l’emploi recherché : <b>"+self.bilanView.action_nbOE()+u"</b>"))
-        self.story.append(MyParagraph(style='style_base', text=u"Nombre de candidatures sur ces offres : <b>"+self.bilanView.action_nbCa()+u"</b>"))
-        self.story.append(MyParagraph(style='style_base', text=u"Nombre d’entretiens d’embauche obtenus : <b>"+self.bilanView.action_nbEN()+u"</b>"))
-        self.story.append(MyParagraph(style='style_base', text=u"Autres emplois recherchés (nom des emplois (codes ROME -----   -----  -----) : <b>"+self.bilanView.action_autreEmp()+u"</b>"))
-        self.story.append(MyParagraph(style='style_base', text=u"Autres secteurs professionnels : <b>"+self.bilanView.action_autreSect()+u"</b>"))
-        self.story.append(MyParagraph(style='style_base', text=u"Autres activités : <b>"+self.bilanView.action_autreAct()+u"</b>"))
-        self.story.append(MyParagraph(style='style_base', text=u"Secteurs géographiques : <b>"+self.bilanView.action_sect()+u"</b>"))
-        self.story.append(MyParagraph(style='style_base', text=u"Actions réalisées pendant votre accompagnement", spaceAfter=7))
+        self.story.append(MyParagraph(u"<b>Accompagnement vers l'emploi / pistes d'emploi</b>", 
+                                      'bullet-style3', spaceAfter=5, bulletText='-'))
+        self.story.append(MyParagraph(style='style_base', 
+                                      text=u"Nombre d’OE correspondant à l’emploi recherché : <b>" \
+                                            +self.bilanView.action_nbOE()+u"</b>"))
+        self.story.append(MyParagraph(style='style_base', 
+                                      text=u"Nombre de candidatures sur ces offres : <b>"\
+                                           +self.bilanView.action_nbCa()+u"</b>"))
+        self.story.append(MyParagraph(style='style_base', 
+                                      text=u"Nombre d’entretiens d’embauche obtenus : <b>"\
+                                           +self.bilanView.action_nbEN()+u"</b>"))
+        self.story.append(MyParagraph(style='style_base', 
+                                      text=u"Autres emplois recherchés (nom des emplois "\
+                                           +"(codes ROME -----   -----  -----) : <b>"\
+                                           +self.bilanView.action_autreEmp()+u"</b>"))
+        self.story.append(MyParagraph(style='style_base', 
+                                      text=u"Autres secteurs professionnels : <b>"\
+                                           +self.bilanView.action_autreSect()+u"</b>"))
+        self.story.append(MyParagraph(style='style_base', 
+                                      text=u"Autres activités : <b>"\
+                                            +self.bilanView.action_autreAct()+u"</b>"))
+        self.story.append(MyParagraph(style='style_base', 
+                                      text=u"Secteurs géographiques : <b>"\
+                                           +self.bilanView.action_sect()+u"</b>"))
+        self.story.append(MyParagraph(style='style_base', 
+                                      text=u"Actions réalisées pendant votre accompagnement", 
+                                      spaceAfter=7))
         self.story.append(self.action_EmplAction())
-           
+        
     
     def action_suivi(self):
         self.story.append(MyParagraph(u"<b>Suivi dans l'emploi</b>", 'bullet-style3', bulletText='-'))
@@ -581,11 +600,11 @@ class bilanDoc(object):
         
     def obsRef(self):
         self.story.append(MyParagraph(style='style1', text=u"<b>Observations du référent</b>", spaceAfter=5))
-        self.append(style='style_base', text=u"<b>"+self.bilanView.conc_obsref()+u"</b>", spaceAfter=0)
+        self.append(style='style_base', text=self.bilanView.conc_obsref(), spaceAfter=0)
         
     def obsBen(self):
         self.story.append(MyParagraph(style='style1', text=u"<b>Observations du bénéficiaire</b>", spaceAfter=5))
-        self.story.append(MyParagraph(style='style_base', text=u"<b>"+self.bilanView.conc_obsbene()+u"</b>", spaceAfter=7))
+        self.story.append(MyParagraph(style='style_base', text=self.bilanView.conc_obsbene(), spaceAfter=7))
         
     def conc(self):
         self.story.append(MyParagraph(style='style3', text=u"Date de suivi à 3 mois : <b><font color=black>"+self.bilanView.conc_datesuivi()+"</font></b>"))

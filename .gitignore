@@ -1,5 +1,5 @@
 *.pyc
 *~
 media/*
-settings.py
+*_localsettings.py
 administration/pdf/common.py

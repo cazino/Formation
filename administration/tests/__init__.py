@@ -10,6 +10,8 @@ from querysetValidatortest import onePopulated_QuerySetTest, oneNotEnAttente_Que
 from rdvViewTest import emptyRdvTest, nonEmptyRdvTest
 from bilanViewTest import persoAllEvents1Test, persoAllEvents2Test, persoAllEvents3Test
 #from stattest import StatResultTest, LCStatCalcTest, SiteCalcStatTest, SiteCalcFreinTest, FreinResultTest, LCFreinResultTest, LCFreinCalcTest
+from bilantest import *
 from feriestest import FeriesPaquesTest, IntervalleTest
+from utilstest import *
 
 

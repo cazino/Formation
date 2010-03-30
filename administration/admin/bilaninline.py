@@ -23,7 +23,9 @@ class bilanInLine(admin.StackedInline):
         action_P2_fin = myfields.MyDateField(u"Période en entreprise 2 - Date de fin (jj/mm/aaaa)")
         conc_datenext = myfields.MyDateField(u"Date de rendez-vous avec le conseiller prescripteur à l'issue du bilan (jj/mm/aaaa)")
         conc_date = myfields.MyDateField(u"Date de réalisation du bilan (jj/mm/aaaa)")
-        conc_obsref = forms.CharField(label=u"Observations du référent: ", required=False,	 widget=forms.Textarea(attrs={'wrap':'hard','class': 'vLargeTextField'}))
+        conc_obsref = forms.CharField(label=u"Observations du référent: ", 
+                                      required=False, 
+                                      widget=forms.Textarea(attrs={'wrap':'hard','class': 'vLargeTextField'}))
         
         
     model = Bilan

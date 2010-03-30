@@ -35,12 +35,14 @@ class SituationSocioPro(models.Model):
     SF_MARIE = u"Marié"
     SF_PACSE = u"Pacsé"
     SF_VM = u"Vie maritale"
-    SF_VEUF = u"Veuf"  
+    SF_VEUF = u"Veuf"
+    SF_DIV = u"Divorcé/Séparé"  
     SF_CHOIX = ((SF_CELIB, SF_CELIB),
                 (SF_MARIE, SF_MARIE),
                 (SF_PACSE, SF_PACSE),
                 (SF_VM, SF_VM),
-                (SF_VEUF, SF_VEUF))
+                (SF_VEUF, SF_VEUF),
+                (SF_DIV, SF_DIV))
     sf_statut = models.CharField(u"Statut marital", max_length=15, choices=SF_CHOIX, null=True,blank=True)
     sf_nbenfants = models.PositiveIntegerField(u"Nombre d'enfants", null=True, blank=True)
     sf_modegarde =  models.TextField(u"Mode de garde", null=True,blank=True)
