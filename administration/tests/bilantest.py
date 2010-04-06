@@ -9,7 +9,7 @@ from greta.administration.pdf.bilanPdf import bilanDoc
 
 class BilanTest(TestCase):
 
-    fixtures = ['bilan315.json', 'bilan3030.json',]
+    fixtures = ['bilan315.json', 'bilan3030.json', 'bilan961.json']
 
     def setUp(self):
         pass
@@ -24,6 +24,12 @@ class BilanTest(TestCase):
         # Ok no Bug
         response = HttpResponse()
         bilanDoc(response, LettreCommande.objects.get(pk=3030)).buildDoc()
+        self.assertTrue(True)
+
+    def test_961(self):
+        # No LC number bug
+        response = HttpResponse()
+        bilanDoc(response, LettreCommande.objects.get(pk=961)).buildDoc()
         self.assertTrue(True)
 
 

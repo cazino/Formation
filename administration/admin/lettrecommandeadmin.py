@@ -171,7 +171,9 @@ class lettreCommandeAdmin(admin.ModelAdmin):
         if bool:
             lc = queryset.get()
             response = HttpResponse(mimetype='application/pdf')
-            response['Content-Disposition'] = 'attachment; filename=bilan_'+lc.numero_lc+'.pdf'
+            response['Content-Disposition'] = 'attachment; filename=bilan_'\
+                                              + (lc.numero_lc and lc.numero_lc or '_')\
+                                              +'.pdf'
             bilanDoc(response, lc).buildDoc()
             return response
         self.message_user(request, msg)

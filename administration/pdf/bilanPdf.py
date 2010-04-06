@@ -84,7 +84,7 @@ class bilanView(GretaView):
         return self.lc.dernier_jour_presta()
     
     def num(self):
-        return self.lc.numero_lc
+        return self._optionalField('self.lc.numero_lc')
     
     def nomprenom(self):
         return self.lc.nom+" "+self.lc.prenom
