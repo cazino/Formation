@@ -26,6 +26,7 @@ class BilanTest(TestCase):
         bilanDoc(response, LettreCommande.objects.get(pk=3030)).buildDoc()
         self.assertTrue(True)
 
+
     def test_961(self):
         # No LC number bug
         response = HttpResponse()
