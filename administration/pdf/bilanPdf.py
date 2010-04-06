@@ -111,7 +111,7 @@ class bilanView(GretaView):
         return self.lc.ale_prescriptrice
     
     def incritALE(self):
-        return self._optionalDateField('self.lc.bilan.inscritAle')
+        return self._optionalField('self.lc.ale_prescriptrice')
          
     def refTel(self):
         return self._optionalField('self.lc.charge_insertion.tel_fixe')
@@ -438,7 +438,7 @@ class bilanDoc(object):
         tableau_data = [[MyParagraph(style='style3', text=u"<b>Bénéficiaire</b>"), MyParagraph(style='style3', text=u"<b>Référent</b>"), MyParagraph(style='style3', text=u"<b>Correspondant ALE</b>")],    
                         [MyParagraph(style='style3', text=u"<b>Nom Prénom : <font color=black>"+self.bilanView.nomprenom()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Nom Prénom : <font color=black>"+self.bilanView.CInomprenom()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Nom Prénom : <font color=black>"+self.bilanView.ALEnomprenom()+"</font></b>")],
                         [MyParagraph(style='style3', text=u"<b>Identifiant n° : <font color=black>"+self.bilanView.idALE()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Organisme : <font color=black>"+self.bilanView.organismeReferent()+"</font></b>"), MyParagraph(style='style3', text=u"<b>ALE : <font color=black>"+self.bilanView.ALEnom()+"</font></b>")],
-                        [MyParagraph(style='style3', text=u"<b>Inscrit à ALE depuis : <font color=black>"+self.bilanView.incritALE()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.refTel()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.ALEtel()+"</font></b>")],
+                        [MyParagraph(style='style3', text=u"<b>Inscrit à ALE de: <font color=black>"+self.bilanView.incritALE()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.refTel()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.ALEtel()+"</font></b>")],
                         [MyParagraph(style='style3', text=u"<b>Tél : <font color=black>"+self.bilanView.LCtel()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Mel : <font color=black>"+self.bilanView.refMail()+"</font></b>"), MyParagraph(style='style3', text=u"<b>Mel : <font color=black>"+self.bilanView.ALEmail()+"</font></b>")],
                         [MyParagraph(style='style3', text=u"<b>Mel : <font color=black>"+self.bilanView.LCmail()+"</font></b>"), None, None],                        
                         ]
